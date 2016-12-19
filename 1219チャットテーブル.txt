@@ -1,0 +1,20 @@
+データベース作成
+create database chat;
+
+ログインIDテーブル作成
+create table LoginId(
+id int NOT NULL, 
+loginid varchar(32) NOT NULL, 
+password varchar(16) NOT NULL, 
+dispname varchar(32) NOT NULL, 
+del_flag bool, 
+lastlogin_date datetime, 
+PRIMARY KEY (id));
+
+ログインIDテーブルへ追加
+insert into LoginId values('1', 'tom', 'nosushinolife', 'GOD', false, NULL);
+insert into LoginId values('2', 'mike', 'apple2016', 'Taro', false, NULL);
+insert into LoginId values('3', 'mary', 'c@ndyclash', 'Yoko', false, NULL);
+
+チャット用テーブル作成
+create table chat_table(main_chat varchar(128), id int, PRIMARY KEY (id));
